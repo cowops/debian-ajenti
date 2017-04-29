@@ -24,7 +24,7 @@ Example Playbook
 
     - hosts: servers
       roles:
-         - { role: loranger.debian-ajenti, ajentiv.enabled: true }
+         - { role: cowops.debian-ajenti, ajentiv.enabled: true }
 
 Tasks
 -----
