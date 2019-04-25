@@ -6,14 +6,24 @@
   apt_repository: repo='deb http://repo.ajenti.org/debian main main debian' state=present
 
 - name: install ajenti package
-  apt: pkg={{ item }} state=latest update_cache=yes force=yes
-  with_items:
+  apt:
+    name: {{ packages }}
+    state: latest
+    update_cache: yes
+    force: yes
+  vars:
+    packages:
       - ajenti
   notify: restart ajenti
 
 - name: install ajenti v plugins
-  apt: pkg={{ item }} state=latest update_cache=yes force=yes
-  with_items:
+  apt:
+    name: {{ packages }}
+    state: latest
+    update_cache: yes
+    force: yes
+  vars:
+    packages:
       - ajenti-v
       - ajenti-v-nginx
       - ajenti-v-mysql
