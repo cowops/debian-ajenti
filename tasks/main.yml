@@ -7,7 +7,7 @@
 
 - name: install ajenti package
   apt:
-    name: {{ packages }}
+    name: "{{ packages }}"
     state: latest
     update_cache: yes
     force: yes
@@ -18,7 +18,7 @@
 
 - name: install ajenti v plugins
   apt:
-    name: {{ packages }}
+    name: "{{ packages }}"
     state: latest
     update_cache: yes
     force: yes
